@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart CNG — Finish the Route. Every Time. | WasteExpo 2027 Launch Strategy</title>
+<meta name="description" content="A product launch strategy for Smart CNG: predictive fuel-system intelligence for refuse fleets, debuting at WasteExpo 2027. Sell uptime, not hardware.">
+<meta property="og:title" content="Smart CNG — Finish the Route. Every Time.">
+<meta property="og:description" content="A product launch strategy for Smart CNG at WasteExpo 2027. Sell uptime, not hardware.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A2240">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A2240; --navy-2:#0E2C52; --red:#EA1034; --white:#FFFFFF;
+    --light:#F4F6F8; --ink:#16202E; --muted:#5A6B7B; --muted-on-dark:#9FB2C6;
+    --line:#D9E0E7; --safe:84px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#0b1622;}
+  body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  .deck{scroll-snap-type:y mandatory;height:100vh;overflow-y:scroll;scroll-behavior:smooth;}
+  .deck::-webkit-scrollbar{display:none;}
+  .slide{position:relative;width:100vw;height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;}
+  .stage{position:absolute;inset:0;padding:var(--safe);display:flex;flex-direction:column;}
+  .bg-light{background:var(--white);color:var(--ink);}
+  .bg-soft{background:var(--light);color:var(--ink);}
+  .bg-navy{background:var(--navy);color:var(--white);}
+  .bg-navy-grad{background:radial-gradient(120% 120% at 80% 10%, #143562 0%, var(--navy) 55%, #07182e 100%);color:var(--white);}
+  .kicker{font-family:'Montserrat';font-weight:700;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);}
+  .kicker.on-dark{color:#FF5C73;}
+  .display{font-family:'Montserrat';font-weight:800;font-size:104px;line-height:1.0;letter-spacing:-0.02em;}
+  .h1{font-family:'Montserrat';font-weight:800;font-size:78px;line-height:1.04;letter-spacing:-0.02em;}
+  .h2{font-family:'Montserrat';font-weight:800;font-size:50px;line-height:1.08;letter-spacing:-0.01em;}
+  .h3{font-family:'Montserrat';font-weight:800;font-size:34px;line-height:1.1;}
+  .lead{font-size:30px;line-height:1.45;font-weight:400;color:var(--muted);max-width:26ch;}
+  .lead.on-dark{color:var(--muted-on-dark);}
+  .body{font-size:23px;line-height:1.5;color:var(--ink);}
+  .body.on-dark{color:#D7E2EF;}
+  .accent{color:var(--red);} .accent-dark{color:#FF5C73;}
+  .spacer{flex:1;}
+  .row{display:flex;} .between{justify-content:space-between;align-items:flex-end;}
+  .footer{position:absolute;left:var(--safe);right:var(--safe);bottom:40px;display:flex;justify-content:space-between;align-items:center;}
+  .logo{height:28px;width:auto;display:block;}
+  .pageno{font-family:'Montserrat';font-weight:600;font-size:17px;color:var(--muted);}
+  .pageno.on-dark{color:var(--muted-on-dark);}
+  .tag{display:inline-flex;align-items:center;gap:10px;font-family:'Montserrat';font-weight:700;font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .tag .dot{width:10px;height:10px;border-radius:2px;background:var(--red);}
+  .sectionbar{display:inline-flex;align-items:center;gap:12px;font-family:'Montserrat';font-weight:800;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);}
+  .cards{display:grid;gap:24px;}
+  .c2{grid-template-columns:repeat(2,1fr);}
+  .c3{grid-template-columns:repeat(3,1fr);}
+  .c4{grid-template-columns:repeat(4,1fr);}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:30px;display:flex;flex-direction:column;gap:11px;}
+  .card.on-navy{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);}
+  .card .lbl{font-family:'Montserrat';font-weight:700;font-size:23px;color:var(--ink);}
+  .card.on-navy .lbl{color:#fff;}
+  .card .desc{font-size:18px;line-height:1.45;color:var(--muted);}
+  .card.on-navy .desc{color:var(--muted-on-dark);}
+  .card .step{font-family:'Montserrat';font-weight:800;font-size:20px;color:var(--red);letter-spacing:.04em;}
+  .card.hi{border-color:var(--red);border-width:2px;}
+  .stat .big{font-family:'Montserrat';font-weight:900;font-size:96px;line-height:.9;letter-spacing:-0.03em;color:var(--red);}
+  .statrow{display:flex;gap:72px;}
+  .stat .cap2{font-size:21px;color:var(--muted-on-dark);max-width:17ch;margin-top:12px;}
+  .list{display:flex;flex-direction:column;gap:20px;margin-top:8px;}
+  .li{display:flex;gap:18px;align-items:flex-start;}
+  .li .mk{flex:0 0 auto;width:13px;height:13px;border-radius:3px;background:var(--red);margin-top:10px;}
+  .li .txt{font-size:26px;line-height:1.4;font-weight:500;}
+  .li .txt.on-dark{color:#E6EEF6;}
+  .pillrow{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  .pill{border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:12px 22px;font-family:'Montserrat';font-weight:600;font-size:20px;color:#E6EEF6;}
+  .pill.light{border-color:var(--line);color:var(--ink);}
+  .src{font-size:14px;color:var(--muted);margin-top:20px;}
+  .src.on-dark{color:#7d92a8;}
+
+  /* GANTT */
+  .gantt{display:grid;grid-template-columns:210px repeat(12,1fr);column-gap:6px;row-gap:12px;grid-auto-rows:42px;margin-top:20px;align-items:center;}
+  .gantt .mhead{font-family:'Montserrat';font-weight:700;font-size:15px;color:var(--muted);text-align:center;align-self:end;}
+  .gantt .lane{font-family:'Montserrat';font-weight:700;font-size:16px;line-height:1.15;color:var(--ink);}
+  .gantt .bar{height:38px;border-radius:8px;display:flex;align-items:center;padding:0 16px;font-family:'Inter';font-weight:600;font-size:15px;color:#fff;white-space:nowrap;overflow:hidden;}
+  .bar.navy{background:var(--navy);}
+  .bar.navy2{background:#3a5a86;}
+  .bar.red{background:var(--red);}
+  .bar.ghost{background:#e7ecf1;color:var(--ink);}
+  .qband{grid-row:1;height:26px;border-radius:6px;background:rgba(234,16,52,.10);display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:800;font-size:13px;letter-spacing:.08em;color:var(--red);}
+  .ms{font-family:'Montserrat';font-weight:800;font-size:13px;color:var(--red);text-align:center;line-height:1.1;}
+  .ms .dia{display:inline-block;width:12px;height:12px;background:var(--red);transform:rotate(45deg);margin-bottom:4px;}
+
+  /* FUNNEL */
+  .funnel{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:16px;}
+  .fstep{display:flex;align-items:center;justify-content:center;gap:18px;color:#fff;font-family:'Montserrat';font-weight:700;border-radius:10px;padding:18px 24px;}
+  .fstep .fn{font-size:26px;} .fstep .fd{font-family:'Inter';font-weight:500;font-size:17px;color:rgba(255,255,255,.8);}
+  .farrow{color:var(--muted-on-dark);font-size:22px;line-height:0;}
+
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;}
+  .gallery-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--line);display:block;box-shadow:0 12px 30px rgba(10,34,64,.12);}
+  @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  .slide.active .stage{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;}
+  @media (prefers-reduced-motion: reduce){ .slide.active .stage{animation:none;} .deck{scroll-behavior:auto;} }
+  .hint{position:fixed;right:18px;bottom:14px;font-family:'Inter';font-size:13px;color:rgba(255,255,255,.4);z-index:50;}
+  @media print{.hint{display:none;}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide bg-navy-grad" style="background-image:linear-gradient(90deg, rgba(7,18,34,.93) 0%, rgba(7,18,34,.70) 42%, rgba(7,18,34,.26) 72%, rgba(7,18,34,.55) 100%), url('american-cng-ads/plate_d.jpg');background-size:cover;background-position:center;">
+    <div class="stage">
+      <div class="tag" style="color:#FF5C73;"><span class="dot"></span>Smart CNG · Product Launch Strategy</div>
+      <div class="spacer"></div>
+      <div class="kicker on-dark">American CNG · WasteExpo 2027</div>
+      <h1 class="display" style="margin-top:20px;max-width:13ch;">Finish the route.<br>Every time.</h1>
+      <p class="lead on-dark" style="margin-top:22px;max-width:36ch;">No route lost to the fuel system. The strategy and the roadmap to launch Smart CNG.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">Chris Cook · Marketing</span>
+    </div>
+  </section>
+
+  <!-- 2 THESIS -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="sectionbar"><span class="dot" style="width:10px;height:10px;background:var(--red);border-radius:2px;"></span>The strategy</div>
+      <div class="spacer"></div>
+      <h2 class="h1" style="max-width:16ch;">We sell uptime,<br>not hardware.</h2>
+      <p class="lead" style="margin-top:24px;max-width:38ch;">Smart CNG isn't a feature on the FMM. It's how American CNG becomes the company that keeps fleets running, and owns the aftermarket that follows.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">01</span>
+    </div>
+  </section>
+
+  <!-- 3 THE BUYER -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">Who we're selling to</div>
+      <h2 class="h2" style="margin-top:14px;max-width:24ch;">The fleet buyer cares about three things, in this order.</h2>
+      <div class="spacer"></div>
+      <div class="cards c3">
+        <div class="card"><div class="step">01</div><div class="lbl">Does it finish the route?</div><div class="desc">Every truck, every day. A parked truck is a missed route and a penalty call.</div></div>
+        <div class="card"><div class="step">02</div><div class="lbl">Can I find a tech?</div><div class="desc">65.5% of diesel shops are understaffed. Fewer people to fix more trucks.</div></div>
+        <div class="card"><div class="step">03</div><div class="lbl">Does the 15-year math work?</div><div class="desc">They keep trucks 10-15 years. Lifecycle cost, not sticker price.</div></div>
+      </div>
+      <p class="body" style="margin-top:24px;color:var(--ink);max-width:54ch;"><strong>What they don't buy on: "green."</strong> They buy the economics green enables. Lead with the dollar. The carbon-negative story is the closing gift.</p>
+      <div class="src">Sources: ATRI 2025; Ryder fleet TCO.</div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">02</span>
+    </div>
+  </section>
+
+  <!-- 3b BUYING COMMITTEE -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="kicker">The buying committee</div>
+      <h2 class="h2" style="margin-top:12px;max-width:28ch;">A committee of skeptics. Each one holds a veto.</h2>
+      <div class="spacer"></div>
+      <div class="cards" style="grid-template-columns:repeat(5,1fr);gap:18px;">
+        <div class="card" style="padding:26px;"><div class="lbl" style="font-size:21px;">Fleet Director</div><div class="desc">TCO, uptime data, parts standardization.</div></div>
+        <div class="card" style="padding:26px;"><div class="lbl" style="font-size:21px;">VP Operations</div><div class="desc">"Will it finish the day?" Route coverage.</div></div>
+        <div class="card" style="padding:26px;"><div class="lbl" style="font-size:21px;">Shop Manager</div><div class="desc">Ease of service, technician burden.</div></div>
+        <div class="card" style="padding:26px;"><div class="lbl" style="font-size:21px;">Procurement</div><div class="desc">Capital cost, incentive capture.</div></div>
+        <div class="card" style="padding:26px;"><div class="lbl" style="font-size:21px;">Sustainability</div><div class="desc">CI scores, ESG, RNG eligibility.</div></div>
+      </div>
+      <p class="body" style="margin-top:24px;color:var(--ink);max-width:54ch;">We win the room by handing each one their veto-killer, and uptime is the one they all share.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">03</span>
+    </div>
+  </section>
+
+  <!-- 4 WHY NOW -->
+  <section class="slide bg-navy" style="background-image:linear-gradient(90deg, rgba(7,18,34,.95) 0%, rgba(7,18,34,.82) 46%, rgba(7,18,34,.5) 100%), url('american-cng-ads/plate_c.jpg');background-size:cover;background-position:center;">
+    <div class="stage">
+      <div class="kicker on-dark">Why now</div>
+      <div class="spacer"></div>
+      <div class="statrow">
+        <div class="stat"><div class="big countup" data-to="5.52" data-pre="$" data-dec="2">$5.52</div><div class="cap2">on-highway diesel per gallon, up $2 in a year. California is already past $7.</div></div>
+        <div class="stat"><div class="big countup" data-to="2.96" data-pre="$" data-dec="2">$2.96</div><div class="cap2">CNG per gallon-equivalent, flat for a decade. Domestic. Price-stable.</div></div>
+      </div>
+      <p class="body on-dark" style="margin-top:44px;max-width:48ch;">A $2.50 spread, and widening. Diesel is up two dollars in twelve months. CNG hasn't moved in ten years. And electric still can't run the route.</p>
+      <div class="src on-dark">Sources: EIA on-highway diesel (May 2026); AFDC CNG; Fox10TV/WALA 2024.</div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">03</span>
+    </div>
+  </section>
+
+  <!-- 5 THE GAP -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="kicker">The gap today</div>
+      <div class="spacer"></div>
+      <h2 class="h2" style="max-width:22ch;">A fuel-system failure isn't a breakdown. It's a cascade.</h2>
+      <div class="list" style="margin-top:28px;">
+        <div class="li"><span class="mk"></span><span class="txt">Faults show up as a dead truck mid-route, not a warning</span></div>
+        <div class="li"><span class="mk"></span><span class="txt">CNG diagnosis needs a specialist who isn't there at 6 AM</span></div>
+        <div class="li"><span class="mk"></span><span class="txt">One failure = blocked route, second truck, tow, transfer. 4-6 hours gone.</span></div>
+      </div>
+      <p class="body" style="margin-top:24px;color:var(--muted);">A truck out of service costs $1,000-$2,000 a day. The average fleet eats 8.7 unplanned days a year.</p>
+      <div class="src">Sources: Highway &amp; Heavy Parts; Ryder.</div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">04</span>
+    </div>
+  </section>
+
+  <!-- 6 THE PRODUCT -->
+  <section class="slide bg-navy-grad" style="background-image:linear-gradient(0deg, rgba(6,16,30,.95) 0%, rgba(6,16,30,.58) 42%, rgba(6,16,30,.6) 100%), url('american-cng-ads/plate_b.jpg');background-size:cover;background-position:center;">
+    <div class="stage">
+      <div class="kicker on-dark">The product, and I know it cold</div>
+      <h2 class="h2" style="margin-top:14px;max-width:22ch;color:#fff;">Smart CNG: intelligence inside the FMM.</h2>
+      <div class="spacer"></div>
+      <div class="cards c4">
+        <div class="card on-navy"><div class="step">01</div><div class="lbl">Monitor</div><div class="desc">Continuous reads on pressure, temperature, flow, solenoid state, fill cycles.</div></div>
+        <div class="card on-navy"><div class="step">02</div><div class="lbl">Detect</div><div class="desc">Flags a degrading regulator or slow leak in real time, on the road.</div></div>
+        <div class="card on-navy"><div class="step">03</div><div class="lbl">Alert</div><div class="desc">Pushes the diagnosis to operators and shop, before the next PM interval.</div></div>
+        <div class="card on-navy"><div class="step">04</div><div class="lbl">Resolve</div><div class="desc">Names the exact part SKU and triggers fulfillment. Closed loop.</div></div>
+      </div>
+      <p class="body on-dark" style="margin-top:24px;">Built into the Fuel Management Module, not a bolt-on. Market-ready Q4 2026.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">05</span>
+    </div>
+  </section>
+
+  <!-- 6b IN THE CAB -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">In the cab</div>
+      <h2 class="h2" style="margin-top:12px;max-width:24ch;">The brains live in the FMM. The face lives on the dash.</h2>
+      <div class="spacer"></div>
+      <div class="row" style="gap:64px;align-items:center;">
+        <div style="flex:1.05;">
+          <div class="list">
+            <div class="li"><span class="mk"></span><span class="txt">Smart CNG does the thinking: monitor, predict, name the part</span></div>
+            <div class="li"><span class="mk"></span><span class="txt">The Smart Gauge is where the driver sees it: range, pressure, the warning</span></div>
+            <div class="li"><span class="mk"></span><span class="txt">One system. Intelligence underneath, clarity on the dash.</span></div>
+          </div>
+        </div>
+        <div style="flex:.95;display:flex;justify-content:center;">
+          <div style="background:#fff;border-radius:20px;padding:36px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(10,34,64,.14);">
+            <img src="american-cng-ads/smart_gauge.png" alt="American CNG Smart Gauge showing range and pressure" style="width:360px;height:auto;display:block;">
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">06</span>
+    </div>
+  </section>
+
+  <!-- 7 WHY WE WIN -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="kicker">Why we win</div>
+      <h2 class="h2" style="margin-top:14px;max-width:24ch;">Everyone else is blind to the tank.</h2>
+      <div class="spacer"></div>
+      <div class="cards c3">
+        <div class="card"><div class="lbl">Telematics</div><div class="desc">Samsara, Geotab. Read the engine ECU. Blind to the fuel system.</div></div>
+        <div class="card"><div class="lbl">CNG gauges</div><div class="desc">Blue iQ, GreenLync. Show fuel level. React after a tech plugs in.</div></div>
+        <div class="card hi"><div class="step">Only us</div><div class="lbl">Smart CNG</div><div class="desc">Predicts the fault and names the part before the truck stops.</div></div>
+      </div>
+      <p class="body" style="margin-top:22px;color:var(--ink);max-width:56ch;"><strong>The aligned-incentive moat:</strong> a service company profits when trucks break down. We profit when they keep running. Only the FMM maker can build prediction in, and the advantage compounds with every system on the road.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">06</span>
+    </div>
+  </section>
+
+  <!-- 8 MESSAGE PILLARS -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">How we say it</div>
+      <h2 class="h2" style="margin-top:14px;max-width:26ch;">Lead with uptime. Close with independence. Green is the gift.</h2>
+      <div class="spacer"></div>
+      <div class="cards c3">
+        <div class="card"><div class="step">Lead</div><div class="lbl">Finish the route</div><div class="desc">Know before it breaks. The part is in your hand, not on backorder.</div></div>
+        <div class="card"><div class="step">Close</div><div class="lbl">Never wait on a tech</div><div class="desc">Fewer failure modes, domestic fuel, math that works for 15 years.</div></div>
+        <div class="card"><div class="step">Gift</div><div class="lbl">Last week's trash, this week's route</div><div class="desc">RNG is carbon-negative. Everyone gets to claim the win.</div></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">07</span>
+    </div>
+  </section>
+
+  <!-- 9 COMMERCIAL -->
+  <section class="slide bg-navy">
+    <div class="stage">
+      <div class="kicker on-dark">The commercial play</div>
+      <h2 class="h2" style="margin-top:14px;max-width:22ch;color:#fff;">It sells iron today.<br>It becomes recurring tomorrow.</h2>
+      <div class="list" style="margin-top:26px;">
+        <div class="li"><span class="mk"></span><span class="txt on-dark">Now: wins more FMM deals + captures parts that leak to aftermarket</span></div>
+        <div class="li"><span class="mk"></span><span class="txt on-dark">Day one: a small per-truck fee, so it's priced, not free</span></div>
+        <div class="li"><span class="mk"></span><span class="txt on-dark">Later: a platform subscription on a moat of fleet-wide fault data</span></div>
+      </div>
+      <p class="body on-dark" style="margin-top:22px;max-width:52ch;">Year-one metric isn't Smart CNG revenue. It's FMM deals won where Smart CNG was the deciding factor. We test the pricing in the beta.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">08</span>
+    </div>
+  </section>
+
+  <!-- 10 THE ROADMAP (GANTT) -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="sectionbar"><span class="dot" style="width:10px;height:10px;background:var(--red);border-radius:2px;"></span>The implementation</div>
+      <h2 class="h2" style="margin-top:10px;max-width:30ch;">The roadmap: 11 months, five workstreams, one launch.</h2>
+
+      <div class="gantt" style="margin-top:20px;">
+        <!-- row 1: month headers -->
+        <div class="mhead" style="grid-row:1;grid-column:2;">JUN</div>
+        <div class="mhead" style="grid-row:1;grid-column:3;">JUL</div>
+        <div class="mhead" style="grid-row:1;grid-column:4;">AUG</div>
+        <div class="mhead" style="grid-row:1;grid-column:5;">SEP</div>
+        <div class="mhead" style="grid-row:1;grid-column:6;">OCT</div>
+        <div class="mhead" style="grid-row:1;grid-column:7;">NOV</div>
+        <div class="mhead" style="grid-row:1;grid-column:8;">DEC</div>
+        <div class="mhead" style="grid-row:1;grid-column:9;">JAN</div>
+        <div class="mhead" style="grid-row:1;grid-column:10;">FEB</div>
+        <div class="mhead" style="grid-row:1;grid-column:11;">MAR</div>
+        <div class="mhead" style="grid-row:1;grid-column:12;">APR</div>
+        <div class="mhead" style="grid-row:1;grid-column:13;">MAY</div>
+        <!-- row 2: milestones -->
+        <div class="ms" style="grid-row:2;grid-column:8;"><span class="dia"></span><br>Product ready</div>
+        <div class="ms" style="grid-row:2;grid-column:10;"><span class="dia"></span><br>Go / No-Go</div>
+        <div class="ms" style="grid-row:2;grid-column:13;"><span class="dia"></span><br>WasteExpo</div>
+        <!-- row 3: Product -->
+        <div class="lane" style="grid-row:3;grid-column:1;">Product</div>
+        <div class="bar navy" style="grid-row:3;grid-column:2 / 9;">Engineering to market-ready</div>
+        <!-- rows 4-5: Proof / Beta -->
+        <div class="lane" style="grid-row:4;grid-column:1;">Proof / Beta</div>
+        <div class="bar navy2" style="grid-row:4;grid-column:3 / 6;">Recruit fleets</div>
+        <div class="bar red" style="grid-row:5;grid-column:6 / 10;">Pilots live + instrument</div>
+        <!-- rows 6-7: Brand & Content -->
+        <div class="lane" style="grid-row:6;grid-column:1;">Brand &amp; Content</div>
+        <div class="bar navy2" style="grid-row:6;grid-column:2 / 5;">Build engine</div>
+        <div class="bar navy" style="grid-row:7;grid-column:5 / 14;">Always-on content</div>
+        <!-- rows 8-9: Demand & Channels -->
+        <div class="lane" style="grid-row:8;grid-column:1;">Demand &amp; Channels</div>
+        <div class="bar navy" style="grid-row:8;grid-column:6 / 13;">Trade + LinkedIn + YouTube ramp</div>
+        <div class="bar red" style="grid-row:9;grid-column:9 / 13;">Early-access campaign</div>
+        <!-- rows 10-11: Events -->
+        <div class="lane" style="grid-row:10;grid-column:1;">Events</div>
+        <div class="bar navy2" style="grid-row:10;grid-column:3 / 8;">Summit + booth planning</div>
+        <div class="bar red" style="grid-row:11;grid-column:13 / 14;">Launch</div>
+      </div>
+      <div class="src" style="margin-top:24px;">Red = critical path. Long-lead items (booth build, Utah summit) start in June 2026.</div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">09</span>
+    </div>
+  </section>
+
+  <!-- 11 PHASE DETAIL / DELIVERABLES -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">What ships each phase</div>
+      <h2 class="h2" style="margin-top:12px;max-width:26ch;">Concrete deliverables, named owners.</h2>
+      <div class="spacer"></div>
+      <div class="cards c4">
+        <div class="card"><div class="step">Jun-Aug</div><div class="lbl">Foundation</div><div class="desc">Manifesto + brand kit. Content engine live. CRM + landing pages. Beta shortlist.<br><span style="color:var(--red);font-weight:600;">Owner: Marketing</span></div></div>
+        <div class="card"><div class="step">Sep-Dec</div><div class="lbl">Soft launch</div><div class="desc">Product ships. Pilots instrumented. White paper #1. First dealer + trade push.<br><span style="color:var(--red);font-weight:600;">Owner: Mktg + Eng + Sales</span></div></div>
+        <div class="card"><div class="step">Jan-Apr</div><div class="lbl">Anticipation</div><div class="desc">Case studies. Utah summit. Early-access campaign. Booth + demo built. Meetings pre-booked.<br><span style="color:var(--red);font-weight:600;">Owner: Mktg + Sales</span></div></div>
+        <div class="card hi"><div class="step">May</div><div class="lbl">Launch + convert</div><div class="desc">WasteExpo. Live demo. Beta operators on floor. Nurture to sales.<br><span style="color:var(--red);font-weight:600;">Owner: All hands</span></div></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">10</span>
+    </div>
+  </section>
+
+  <!-- 12 THE BETA -->
+  <section class="slide bg-navy-grad">
+    <div class="stage">
+      <div class="kicker on-dark">The linchpin</div>
+      <h2 class="h2" style="margin-top:14px;max-width:24ch;color:#fff;">The beta turns a promise into proof.</h2>
+      <div class="spacer"></div>
+      <div class="cards c4">
+        <div class="card on-navy"><div class="lbl">Who</div><div class="desc">2-3 marquee regional fleets, different regions and climates.</div></div>
+        <div class="card on-navy"><div class="lbl">Measure</div><div class="desc">One hero metric: downtime avoided. Instrumented from day one.</div></div>
+        <div class="card on-navy"><div class="lbl">Gate</div><div class="desc">Go/no-go by Feb 2027 on data quality, not hope.</div></div>
+        <div class="card on-navy"><div class="lbl">If weak</div><div class="desc">Launch the category vision; proof follows at the next event.</div></div>
+      </div>
+      <p class="body on-dark" style="margin-top:22px;max-width:54ch;">Credibility comes from the fleet's name, not the sample size. Reference customers, not a clinical trial.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">11</span>
+    </div>
+  </section>
+
+  <!-- 13 CHANNELS (priority stack) -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="kicker">How we reach them</div>
+      <h2 class="h2" style="margin-top:12px;max-width:26ch;">Meet the buyer where the buyer actually is.</h2>
+      <div class="spacer"></div>
+      <div class="cards c2" style="gap:18px;">
+        <div class="card hi" style="flex-direction:row;align-items:center;gap:24px;"><div class="step" style="font-size:30px;">01</div><div><div class="lbl">Trade press, associations, dealers, referrals</div><div class="desc">Where the owner-operator lives: NWRA, Waste Dive, equipment dealers. Relationship-led.</div></div></div>
+        <div class="card" style="flex-direction:row;align-items:center;gap:24px;"><div class="step" style="font-size:30px;">02</div><div><div class="lbl">LinkedIn (paid)</div><div class="desc">For corporate and municipal fleet directors and procurement. ABM + white-paper lead-gen.</div></div></div>
+        <div class="card" style="flex-direction:row;align-items:center;gap:24px;"><div class="step" style="font-size:30px;">03</div><div><div class="lbl">YouTube</div><div class="desc">Beta-fleet testimonials and the demo. Credibility over production gloss.</div></div></div>
+        <div class="card" style="flex-direction:row;align-items:center;gap:24px;"><div class="step" style="font-size:30px;">04</div><div><div class="lbl">TikTok / IG / FB</div><div class="desc">Reach plays that amplify the one content engine. In-house + AI, repurposed.</div></div></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">12</span>
+    </div>
+  </section>
+
+  <!-- 14 CONVERSION FUNNEL -->
+  <section class="slide bg-navy">
+    <div class="stage">
+      <div class="kicker on-dark">From interest to pipeline</div>
+      <h2 class="h2" style="margin-top:12px;max-width:24ch;color:#fff;">Every road leads to a sales meeting.</h2>
+      <div class="spacer"></div>
+      <div class="funnel">
+        <div class="fstep" style="background:#3a5a86;width:86%;"><span class="fn">Reach</span><span class="fd">trade + LinkedIn + YouTube + social</span></div>
+        <div class="farrow">&#9660;</div>
+        <div class="fstep" style="background:#2f4d76;width:70%;"><span class="fn">Capture</span><span class="fd">landing page + lead magnet, qualified by fleet size &amp; CNG status</span></div>
+        <div class="farrow">&#9660;</div>
+        <div class="fstep" style="background:#24405f;width:54%;"><span class="fn">Nurture</span><span class="fd">email mini-series, demo clip, white paper</span></div>
+        <div class="farrow">&#9660;</div>
+        <div class="fstep" style="background:var(--red);width:38%;"><span class="fn">Sales meeting</span><span class="fd">the one CTA everything points to</span></div>
+      </div>
+      <div class="src on-dark">CRM + lead scoring underneath. No demand without a place to land it.</div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">13</span>
+    </div>
+  </section>
+
+  <!-- 15 THE SHOW -->
+  <section class="slide bg-navy-grad">
+    <div class="stage">
+      <div class="kicker on-dark">On the floor</div>
+      <div class="spacer"></div>
+      <h2 class="h2" style="max-width:24ch;color:#fff;">One live demo: a fault, caught in real time.</h2>
+      <p class="lead on-dark" style="margin-top:22px;max-width:42ch;">The dashboard reads a truck's health, fires a fault, and names the exact part, on screen. The fix is the pitch.</p>
+      <div class="pillrow" style="margin-top:28px;">
+        <span class="pill">5-second booth headline</span>
+        <span class="pill">Closed-loop demo, rehearsed</span>
+        <span class="pill">Pre-recorded backup</span>
+        <span class="pill">Beta operators on the floor</span>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">14</span>
+    </div>
+  </section>
+
+  <!-- 16 MEASUREMENT -->
+  <section class="slide bg-light">
+    <div class="stage">
+      <div class="kicker">How we measure success</div>
+      <h2 class="h2" style="margin-top:12px;max-width:26ch;">Leading indicators early. Pipeline late. Compounding always.</h2>
+      <div class="spacer"></div>
+      <div class="cards c3">
+        <div class="card"><div class="step">Phase 0-1</div><div class="lbl">Awareness</div><div class="desc">Reach, list growth, content engagement, dealer/trade mentions.</div></div>
+        <div class="card"><div class="step">Phase 2</div><div class="lbl">Intent</div><div class="desc">Traffic to funnel, lead capture rate, early-access signups, booth meetings booked.</div></div>
+        <div class="card"><div class="step">Phase 3-4</div><div class="lbl">Pipeline</div><div class="desc">Sales meetings, beta conversions, FMM deals influenced by Smart CNG.</div></div>
+      </div>
+      <p class="body" style="margin-top:22px;color:var(--ink);">North star: <strong>steady, compounding growth week over week, month over month.</strong> Not a flash in the pan.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">15</span>
+    </div>
+  </section>
+
+  <!-- 17 RISKS -->
+  <section class="slide bg-navy">
+    <div class="stage">
+      <div class="kicker on-dark">Risks, and how we adapt</div>
+      <div class="spacer"></div>
+      <div class="list" style="margin-top:8px;">
+        <div class="li"><span class="mk"></span><span class="txt on-dark"><strong>Product in dev:</strong> beta framing, never vaporware. The Feb gate protects us.</span></div>
+        <div class="li"><span class="mk"></span><span class="txt on-dark"><strong>CCFT wakes up:</strong> our 3-5 year window becomes installed base and switching cost.</span></div>
+        <div class="li"><span class="mk"></span><span class="txt on-dark"><strong>EV mandates:</strong> ACT constrains OEMs, not fleets. Refuse is the best CNG case.</span></div>
+        <div class="li"><span class="mk"></span><span class="txt on-dark"><strong>The hedge:</strong> what we're really building is fuel-system intelligence. It migrates.</span></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">16</span>
+    </div>
+  </section>
+
+  <!-- 18 THE ASK / NEXT 30 -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">What I need to start</div>
+      <h2 class="h2" style="margin-top:12px;max-width:26ch;">The next 30 days, if you say go.</h2>
+      <div class="spacer"></div>
+      <div class="cards c3">
+        <div class="card"><div class="step">Week 1-2</div><div class="lbl">Lock + recruit</div><div class="desc">Approve positioning. Open beta conversations with 5 target fleets. Stand up CRM.</div></div>
+        <div class="card"><div class="step">Week 2-4</div><div class="lbl">Build the spine</div><div class="desc">Manifesto, brand kit, content engine. Kick off booth + summit (long-lead).</div></div>
+        <div class="card"><div class="step">Decisions</div><div class="lbl">From you</div><div class="desc">Budget tier, beta product readiness, and the named fleets we already know.</div></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">17</span>
+    </div>
+  </section>
+
+  <!-- 18a CREATIVE GALLERY -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">The creative is already built</div>
+      <h2 class="h2" style="margin-top:10px;max-width:30ch;">Six ads, on-brand and ready to run.</h2>
+      <div class="gallery-grid">
+        <img src="american-cng-ads/FINAL_03_1000-stops.jpg" alt="1,000 stops a day, powered by American CNG">
+        <img src="american-cng-ads/FINAL_02_cut-fuel-costs.jpg" alt="Cut fuel costs, lower emissions, American-made">
+        <img src="american-cng-ads/FINAL_05_strength.jpg" alt="Strength you can trust, savings you can measure">
+        <img src="american-cng-ads/FINAL_01b_clean-fuel-standard.jpg" alt="The American standard in clean fuel">
+        <img src="american-cng-ads/FINAL_04_convert-once.jpg" alt="Convert once, save every mile">
+        <img src="american-cng-ads/FINAL_06b_cleaner-cheaper.jpg" alt="Cleaner, cheaper, built in the USA">
+      </div>
+      <div class="src">Launch-ready creative in the American CNG visual system. The engine is primed, not theoretical.</div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">18</span>
+    </div>
+  </section>
+
+  <!-- 18b THE LOOP -->
+  <section class="slide bg-navy">
+    <div class="stage" style="align-items:center;justify-content:center;">
+      <div style="position:absolute;left:var(--safe);top:var(--safe);">
+        <div class="kicker on-dark">The bigger picture</div>
+        <h2 class="h2" style="margin-top:10px;max-width:18ch;color:#fff;">The fleet fuels itself.</h2>
+      </div>
+      <div style="position:relative;width:660px;height:600px;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:430px;height:430px;border-radius:50%;border:2px dashed rgba(159,178,198,.4);"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+          <div style="font-family:'Montserrat';font-weight:900;font-size:30px;color:#FF5C73;letter-spacing:.04em;">THE LOOP</div>
+          <div style="font-family:'Inter';font-size:18px;color:var(--muted-on-dark);margin-top:8px;max-width:16ch;">1 landfill fuels<br>~40 trucks (EPA)</div>
+        </div>
+        <!-- nodes N E S W -->
+        <div style="position:absolute;top:-6px;left:50%;transform:translateX(-50%);background:#0E2C52;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 22px;width:230px;text-align:center;">
+          <div style="font-family:'Montserrat';font-weight:800;font-size:20px;color:#fff;">Collect the waste</div>
+          <div style="font-family:'Inter';font-size:15px;color:var(--muted-on-dark);margin-top:4px;">The route runs every day</div>
+        </div>
+        <div style="position:absolute;top:50%;right:-30px;transform:translateY(-50%);background:#0E2C52;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 22px;width:220px;text-align:center;">
+          <div style="font-family:'Montserrat';font-weight:800;font-size:20px;color:#fff;">Waste becomes RNG</div>
+          <div style="font-family:'Inter';font-size:15px;color:var(--muted-on-dark);margin-top:4px;">Carbon-negative fuel</div>
+        </div>
+        <div style="position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:#0E2C52;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:18px 22px;width:230px;text-align:center;">
+          <div style="font-family:'Montserrat';font-weight:800;font-size:20px;color:#fff;">RNG fuels the truck</div>
+          <div style="font-family:'Inter';font-size:15px;color:var(--muted-on-dark);margin-top:4px;">Domestic. Price-stable.</div>
+        </div>
+        <div style="position:absolute;top:50%;left:-30px;transform:translateY(-50%);background:var(--red);border-radius:12px;padding:18px 22px;width:220px;text-align:center;">
+          <div style="font-family:'Montserrat';font-weight:800;font-size:20px;color:#fff;">Smart CNG keeps it running</div>
+          <div style="font-family:'Inter';font-size:15px;color:rgba(255,255,255,.85);margin-top:4px;">So the loop never breaks</div>
+        </div>
+        <!-- arrows -->
+        <div style="position:absolute;top:34px;right:96px;color:#FF5C73;font-size:30px;">&#10142;</div>
+        <div style="position:absolute;bottom:60px;right:96px;color:#FF5C73;font-size:30px;transform:rotate(70deg);">&#10142;</div>
+        <div style="position:absolute;bottom:34px;left:96px;color:#FF5C73;font-size:30px;transform:rotate(180deg);">&#10142;</div>
+        <div style="position:absolute;top:60px;left:96px;color:#FF5C73;font-size:30px;transform:rotate(290deg);">&#10142;</div>
+      </div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+      <span class="pageno on-dark">19</span>
+    </div>
+  </section>
+
+  <!-- 20 CLOSE -->
+  <section class="slide bg-navy-grad" style="background-image:linear-gradient(90deg, rgba(7,18,34,.92) 0%, rgba(7,18,34,.68) 42%, rgba(7,18,34,.4) 100%), url('american-cng-ads/plate_a.jpg');background-size:cover;background-position:center;">
+    <div class="stage">
+      <div class="spacer"></div>
+      <div class="kicker on-dark">Smart CNG · WasteExpo 2027</div>
+      <h2 class="display" style="margin-top:20px;max-width:14ch;">Finish the route.<br>Every time.</h2>
+      <p class="lead on-dark" style="margin-top:22px;max-width:38ch;">We sell uptime, not hardware. That's how Smart CNG owns the most concentrated room of refuse buyers in the country.</p>
+      <div class="spacer"></div>
+      <div class="row between">
+        <img class="logo" style="height:36px;" src="https://americancng.com/cdn/shop/files/ACNG_DIS_Color_White_280x@2x.png?v=1775074109" alt="American CNG">
+        <span class="pageno on-dark">Chris Cook · Marketing</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+<div class="hint">← / → or ↑ / ↓ to navigate</div>
+<script>
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  // auto-number numeric page footers so inserts never break sequence
+  let pc=0; slides.forEach(s=>{const pn=s.querySelector('.pageno'); if(pn && /^\d+$/.test(pn.textContent.trim())){pc++; pn.textContent=String(pc).padStart(2,'0');}});
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView({behavior:'smooth'});}
+  window.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1);}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(i-1);}
+    if(e.key==='Home'){go(0);}if(e.key==='End'){go(slides.length-1);}
+  });
+  function countUp(el){
+    if(el.dataset.done)return; el.dataset.done=1;
+    const to=parseFloat(el.dataset.to), dec=parseInt(el.dataset.dec||0), pre=el.dataset.pre||'';
+    const start=performance.now(), dur=900;
+    function tick(now){
+      const p=Math.min(1,(now-start)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=pre+(to*e).toFixed(dec);
+      if(p<1)requestAnimationFrame(tick); else el.textContent=pre+to.toFixed(dec);
+    }
+    requestAnimationFrame(tick);
+  }
+  const obs=new IntersectionObserver(es=>{es.forEach(en=>{
+    if(en.isIntersecting){i=slides.indexOf(en.target);en.target.classList.add('active');
+      en.target.querySelectorAll('.countup').forEach(countUp);}
+  });},{threshold:.6});
+  slides.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
