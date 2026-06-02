@@ -100,6 +100,41 @@
   .slide.active .stage{animation:rise .55s cubic-bezier(.2,.7,.2,1) both;}
   @media (prefers-reduced-motion: reduce){ .slide.active .stage{animation:none;} .deck{scroll-behavior:auto;} }
   .hint{position:fixed;right:18px;bottom:14px;font-family:'Inter';font-size:13px;color:rgba(255,255,255,.4);z-index:50;}
+
+  /* ---- MOBILE ---- */
+  @media (max-width: 820px){
+    :root{ --safe:22px; }
+    .deck{ scroll-snap-type:none; }
+    .slide{ height:auto; min-height:100svh; scroll-snap-align:none; }
+    .stage{ position:relative; inset:auto; min-height:100svh; padding:64px 22px 92px; }
+    .display{ font-size:46px; }
+    .h1{ font-size:38px; }
+    .h2{ font-size:29px; }
+    .h3{ font-size:23px; }
+    .lead{ font-size:20px; max-width:100%; }
+    .body{ font-size:17px; }
+    .li .txt{ font-size:18px; }
+    .li .mk{ width:11px;height:11px;margin-top:8px; }
+    .kicker{ font-size:14px; letter-spacing:.12em; }
+    .sectionbar{ font-size:13px; }
+    .stat .big{ font-size:58px; }
+    .statrow{ flex-direction:column; gap:26px; }
+    .stat .cap2{ max-width:100%; }
+    .cards{ grid-template-columns:1fr !important; gap:14px; }
+    .card{ padding:22px !important; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+    .stage > .row{ flex-direction:column; align-items:flex-start; gap:26px; }
+    .pillrow{ gap:10px; }
+    .pill{ font-size:16px; padding:10px 16px; }
+    .stage img{ max-width:100%; height:auto; }
+    .footer{ bottom:24px; }
+    .hint{ display:none; }
+    .src{ font-size:13px; }
+    .ganttwrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px; }
+    .gantt{ min-width:760px; }
+    .stage:has(.loopwrap){ align-items:flex-start !important; justify-content:flex-start !important; }
+    .loopwrap{ transform:scale(.5); transform-origin:top left; margin-top:128px; }
+  }
   @media print{.hint{display:none;}}
 </style>
 </head>
@@ -333,7 +368,7 @@
       <div class="sectionbar"><span class="dot" style="width:10px;height:10px;background:var(--red);border-radius:2px;"></span>The implementation</div>
       <h2 class="h2" style="margin-top:10px;max-width:30ch;">The roadmap: 11 months, five workstreams, one launch.</h2>
 
-      <div class="gantt" style="margin-top:20px;">
+      <div class="ganttwrap"><div class="gantt" style="margin-top:20px;">
         <!-- row 1: month headers -->
         <div class="mhead" style="grid-row:1;grid-column:2;">JUN</div>
         <div class="mhead" style="grid-row:1;grid-column:3;">JUL</div>
@@ -370,7 +405,7 @@
         <div class="lane" style="grid-row:10;grid-column:1;">Events</div>
         <div class="bar navy2" style="grid-row:10;grid-column:3 / 8;">Summit + booth planning</div>
         <div class="bar red" style="grid-row:11;grid-column:13 / 14;">Launch</div>
-      </div>
+      </div></div>
       <div class="src" style="margin-top:24px;">Red = critical path. Long-lead items (booth build, Utah summit) start in June 2026.</div>
       <div class="spacer"></div>
     </div>
@@ -572,7 +607,7 @@
         <div class="kicker on-dark">The bigger picture</div>
         <h2 class="h2" style="margin-top:10px;max-width:18ch;color:#fff;">The fleet fuels itself.</h2>
       </div>
-      <div style="position:relative;width:660px;height:600px;">
+      <div class="loopwrap" style="position:relative;width:660px;height:600px;">
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:430px;height:430px;border-radius:50%;border:2px dashed rgba(159,178,198,.4);"></div>
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
           <div style="font-family:'Montserrat';font-weight:900;font-size:30px;color:#FF5C73;letter-spacing:.04em;">THE LOOP</div>
