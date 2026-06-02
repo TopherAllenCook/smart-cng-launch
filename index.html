@@ -101,6 +101,16 @@
   @media (prefers-reduced-motion: reduce){ .slide.active .stage{animation:none;} .deck{scroll-behavior:auto;} }
   .hint{position:fixed;right:18px;bottom:14px;font-family:'Inter';font-size:13px;color:rgba(255,255,255,.4);z-index:50;}
 
+  .ftablewrap{overflow-x:auto;margin-top:18px;}
+  .ftable{width:100%;border-collapse:collapse;font-size:20px;min-width:760px;}
+  .ftable th{text-align:left;font-family:'Montserrat';font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 16px 12px;border-bottom:2px solid var(--line);}
+  .ftable td{padding:14px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
+  .ftable td.unit{font-family:'Montserrat';font-weight:700;}
+  .stbadge{display:inline-flex;align-items:center;gap:9px;font-family:'Montserrat';font-weight:700;font-size:16px;}
+  .stbadge .d{width:11px;height:11px;flex:0 0 auto;}
+  .ok{color:#1c8c4c;} .ok .d{background:#1c8c4c;border-radius:50%;}
+  .watch{color:#b5730a;} .watch .d{background:#d98a00;border-radius:2px;}
+  .alert{color:var(--red);} .alert .d{background:var(--red);border-radius:2px;}
   /* ---- MOBILE ---- */
   @media (max-width: 820px){
     :root{ --safe:22px; }
@@ -301,6 +311,33 @@
     <div class="footer">
       <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
       <span class="pageno">06</span>
+    </div>
+  </section>
+
+  <!-- 6c FLEET ROSTER -->
+  <section class="slide bg-soft">
+    <div class="stage">
+      <div class="kicker">The whole fleet, one screen</div>
+      <h2 class="h2" style="margin-top:10px;max-width:28ch;">Manage the roster, not the emergency.</h2>
+      <div class="ftablewrap">
+        <table class="ftable">
+          <thead><tr><th>Unit</th><th>Route</th><th>Fuel-system health</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td class="unit">CNG-1042</td><td>Route 7</td><td>Nominal</td><td><span class="stbadge ok"><span class="d"></span>OK</span></td><td>&mdash;</td></tr>
+            <tr><td class="unit">CNG-1057</td><td>Route 3</td><td>Nominal</td><td><span class="stbadge ok"><span class="d"></span>OK</span></td><td>&mdash;</td></tr>
+            <tr><td class="unit">CNG-1063</td><td>Route 11</td><td>Regulator pressure drift</td><td><span class="stbadge watch"><span class="d"></span>Watch</span></td><td>Schedule service, ~9 days</td></tr>
+            <tr><td class="unit">CNG-1088</td><td>Route 5</td><td>Secondary regulator degrading</td><td><span class="stbadge alert"><span class="d"></span>Alert</span></td><td>Part #FMM-204 en route</td></tr>
+            <tr><td class="unit">CNG-1095</td><td>Route 8</td><td>Slow PRD vent leak</td><td><span class="stbadge watch"><span class="d"></span>Watch</span></td><td>Inspect this week</td></tr>
+            <tr><td class="unit">CNG-1100</td><td>Route 1</td><td>Nominal</td><td><span class="stbadge ok"><span class="d"></span>OK</span></td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="body" style="margin-top:22px;color:var(--ink);max-width:60ch;">150 trucks become a managed list. You fix the one unit that needs it, with the part already moving, before it ever misses a route.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="footer">
+      <img class="logo" src="https://ucarecdn.com/d329a4f1-da43-436e-a3ac-9cd74b7798c5/-/format/auto/-/preview/600x600/-/quality/lighter/ACNG_Logo_Red_White_Blue.png" alt="American CNG">
+      <span class="pageno">07</span>
     </div>
   </section>
 
